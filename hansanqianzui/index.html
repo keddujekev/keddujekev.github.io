@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩三千最新更新最新版 - 提供韩三千小说全集在线阅读，包含章节目录、剧情简介及最新章节更新通知，第一时间掌握最新动态。">
+    <meta name="keywords" content="韩三千最新更新最新版,韩三千,都市小说,在线阅读">
+    <title>韩三千最新更新最新版 - 韩三千全集在线阅读与章节导航</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012;
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc0010;
+        }
+
+        /* Layout Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Chapter List */
+        .chapter-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .section-title {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .chapter-title {
+            flex: 1;
+        }
+
+        .chapter-date {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-left: 16px;
+            white-space: nowrap;
+        }
+
+        .chapter-tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            margin-left: 12px;
+        }
+
+        .chapter-tag.new {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Synopsis Section */
+        .synopsis-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .synopsis-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .synopsis-content {
+            font-size: 15px;
+            color: var(--text-light);
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* Reading Modal Placeholder */
+        .read-btn {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">韩三千<span>最新更新最新版</span></a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">章节目录</a>
+                <a href="#">作者简介</a>
+                <a href="#">读者评论</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>韩三千最新更新最新版</h1>
+                <p>都市极品战神，韩三千携绝世神功强势归来，为您呈现最精彩的都市修真篇章。持续更新中，请锁定本站获取最新章节。</p>
+                <a href="#latest" class="btn-primary">立即阅读最新章节</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content: Chapter List -->
+                <div class="main-content" id="latest">
+                    <div class="chapter-list">
+                        <div class="section-title">
+                            <span>最新章节列表</span>
+                            <span style="font-size:14px; font-weight:normal; color:#666;">共 2542 章</span>
+                        </div>
+                        
+                        <!-- Chapter 2542 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2542章 暗夜杀机</span>
+                                <span class="chapter-tag new">最新</span>
+                            </div>
+                            <span class="chapter-date">2023-10-27</span>
+                        </a>
+
+                        <!-- Chapter 2541 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2541章 暗流涌动</span>
+                            </div>
+                            <span class="chapter-date">2023-10-26</span>
+                        </a>
+
+                        <!-- Chapter 2540 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2540章 谁敢动他</span>
+                            </div>
+                            <span class="chapter-date">2023-10-25</span>
+                        </a>
+
+                        <!-- Chapter 2539 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2539章 苏家的反应</span>
+                            </div>
+                            <span class="chapter-date">2023-10-24</span>
+                        </a>
+
+                        <!-- Chapter 2538 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2538章 风云变幻</span>
+                            </div>
+                            <span class="chapter-date">2023-10-23</span>
+                        </a>
+
+                        <!-- Chapter 2537 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2537章 旧友重逢</span>
+                            </div>
+                            <span class="chapter-date">2023-10-22</span>
+                        </a>
+
+                         <!-- Chapter 2536 -->
+                         <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2536章 隐秘的势力</span>
+                            </div>
+                            <span class="chapter-date">2023-10-21</span>
+                        </a>
+
+                        <!-- Chapter 2535 -->
+                        <a href="#" class="chapter-item">
+                            <div>
+                                <span class="chapter-title">第2535章 剑指苍穹</span>
+                            </div>
+                            <span class="chapter-date">2023-10-20</span>
+                        </a>
+                        
+                        <!-- Pagination -->
+                        <div style="padding: 20px; text-align: center; border-top: 1px solid #f0f0f0;">
+                            <a href="#" style="color: #666; margin: 0 5px;">上一页</a>
+                            <a href="#" style="color: var(--primary-color); font-weight: bold; margin: 0 5px;">1</a>
+                            <a href="#" style="color: #666; margin: 0 5px;">2</a>
+                            <a href="#" style="color: #666; margin: 0 5px;">3</a>
+                            <span style="margin: 0 5px;">...</span>
+                            <a href="#" style="color: #666; margin: 0 5px;">2542</a>
+                            <a href="#" style="color: #666; margin: 0 5px;">下一页</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside>
+                    <!-- Book Info -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">小说简介</h3>
+                        <p style="font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 15px;">
+                            <strong>《韩三千》</strong>是一部经典的都市战神题材小说。讲述了落魄豪门少爷韩三千，在苏家受尽屈辱，却凭借绝世神功和过人智慧，一步步走上人生巅峰，护妻虐渣的故事。
+                        </p>
+                        <ul class="info-list">
+                            <li><span>作者</span> <span>不败神话</span></li>
+                            <li><span>状态</span> <span style="color: var(--primary-color);">连载中</span></li>
+                            <li><span>字数</span> <span>386万</span></li>
+                            <li><span>分类</span> <span>都市生活</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Hot Tags -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">热门标签</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">韩三千</a>
+                            <a href="#" class="tag">苏清歌</a>
+                            <a href="#" class="tag">陆天龙</a>
+                            <a href="#" class="tag">绝世战神</a>
+                            <a href="#" class="tag">豪门恩怨</a>
+                            <a href="#" class="tag">都市修真</a>
+                            <a href="#" class="tag">逆袭</a>
+                            <a href="#" class="tag">爽文</a>
+                        </div>
+                    </div>
+
+                    <!-- Recommended -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">推荐阅读</h3>
+                        <ul style="font-size: 14px; color: #555;">
+                            <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+                                <a href="#">第一序列</a>
+                            </li>
+                            <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+                                <a href="#">龙王殿</a>
+                            </li>
+                            <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+                                <a href="#">神级龙卫</a>
+                            </li>
+                            <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+                                <a href="#">重生之都市仙尊</a>
+                            </li>
+                            <li>
+                                <a href="#">赘婿当道</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Synopsis Section -->
+            <section class="synopsis-section">
+                <h2 class="synopsis-title">小说简介</h2>
+                <div class="synopsis-content">
+                    <p>韩三千，苏家大少，因家族变故沦为苏家赘婿，受尽冷眼与嘲笑。然而，这看似平庸的赘婿，实则身怀惊世骇俗的绝世神功，性格坚毅，心怀正义。在苏清歌的陪伴与支持下，他一步步揭开身世之谜，展现出真正的实力，成为令整个都市乃至修真界都闻风丧胆的绝世战神。</p>
+                    <br>
+                    <p>本书以细腻的笔触描绘了都市生活的酸甜苦辣，既有家族恩怨的激烈冲突，也有都市修真的奇幻冒险，更不乏温馨感人的情感纠葛。韩三千的故事，是关于坚持、勇气与爱的赞歌，让每一位读者都能在其中找到共鸣。</p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 style="text-align: center; margin-bottom: 30px; font-size: 24px; color: var(--secondary-color);">常见问题</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">如何查看韩三千最新更新最新版？</div>
+                    <div class="faq-answer">请直接访问本站首页，在最新章节列表中即可看到最新发布的章节，点击即可阅读。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">小说是否支持手机阅读？</div>
+                    <div class="faq-answer">支持。本站已完全适配移动端，您可以通过手机浏览器或下载相关APP进行阅读，体验流畅。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">章节更新频率是多少？</div>
+                    <div class="faq-answer">本站会尽量保证每日更新，具体更新时间请关注首页公告。如有特殊情况，我们会提前通知。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">阅读需要收费吗？</div>
+                    <div class="faq-answer">目前本站提供部分免费章节试读，完整阅读内容请关注后续活动或会员服务。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系合作</a>
+                <a href="#">意见反馈</a>
+            </div>
+            <p class="copyright">Copyright © 2023 韩三千最新更新最新版阅读网. All Rights Reserved.</p>
+            <p class="copyright" style="margin-top: 8px; font-size: 12px;">本站内容均来自互联网，仅供学习交流使用，请于下载后24小时内删除。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
