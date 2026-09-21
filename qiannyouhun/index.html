@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="倩女幽魂职业攻略：详解医师、射手、异人、方士、甲士、魅者六大职业特点、技能搭配与PVE/PVP玩法，助你选择最适合自己的角色。">
+    <meta name="keywords" content="倩女幽魂职业,倩女幽魂职业攻略,倩女幽魂职业选择,倩女幽魂医师,倩女幽魂射手,倩女幽魂异人">
+    <title>倩女幽魂职业-六大职业特点分析与选择指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #e67e22;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 60px;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .intro-section h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .intro-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .intro-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Class Grid */
+        .class-section {
+            margin-bottom: 50px;
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .class-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .class-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .class-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .class-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .class-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #eee;
+            color: #555;
+        }
+
+        .tag.role-tank { background: #e8f4f8; color: #2980b9; }
+        .tag.role-healer { background: #e8f8f5; color: #16a085; }
+        .tag.role-dps { background: #fdedec; color: #c0392b; }
+        .tag.role-crowd { background: #fef9e7; color: #f39c12; }
+
+        .class-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .class-features {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .class-features li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .class-features li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        .comparison-section h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .intro-grid, .class-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            <span>⚔️</span> 倩女职业攻略
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overview">职业概览</a></li>
+                <li><a href="#classes">职业详解</a></li>
+                <li><a href="#comparison">属性对比</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>倩女幽魂职业</h1>
+        <p>从甲士的坚盾到魅者的控场，从医师的仁心到异人的傀儡。深度解析六大职业定位，助你找到最适合的战斗伙伴。</p>
+    </div>
+</section>
+
+<main class="container">
+
+    <!-- Overview Section -->
+    <section id="overview" class="intro-section">
+        <h2>职业概览与定位</h2>
+        <p>《倩女幽魂》手游中共有六大职业，分为坦克、输出和辅助三大类。每个职业都有其独特的技能机制和战斗风格。选择职业时，建议考虑你的游戏习惯：是喜欢冲锋陷阵、远程狙击，还是享受操控战场节奏？</p>
+        
+        <div class="intro-grid">
+            <div class="intro-card">
+                <h3>🛡️ 坦克</h3>
+                <p>负责吸引敌人火力，保护队友。生存能力最强，是团队的核心防线。</p>
+            </div>
+            <div class="intro-card">
+                <h3>🗡️ 输出</h3>
+                <p>负责造成伤害。分为物理输出（甲士、射手）和法术输出（方士、异人、魅者）。</p>
+            </div>
+            <div class="intro-card">
+                <h3>💚 辅助</h3>
+                <p>负责治疗和增益。医师和魅者是团队不可或缺的支援力量。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Details Grid -->
+    <section id="classes" class="class-section">
+        <div class="class-header">
+            <h2>六大职业深度解析</h2>
+            <a href="#comparison" class="btn">查看属性对比</a>
+        </div>
+
+        <div class="class-grid">
+            <!-- Physician -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/physician/400/300" alt="医师职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">医师</h3>
+                    <div class="class-tags">
+                        <span class="tag role-healer">治疗辅助</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">群体</span>
+                    </div>
+                    <p class="class-desc">医师是团队中最可靠的治疗者，擅长使用药草和针法为队友疗伤。在PVP中也能通过控制技能限制敌人行动。</p>
+                    <ul class="class-features">
+                        <li>拥有强大的群体治疗技能</li>
+                        <li>具备毒系伤害和控制能力</li>
+                        <li>是团队副本不可或缺的角色</li>
+                    </ul>
+                    <a href="#" class="btn">医师攻略</a>
+                </div>
+            </article>
+
+            <!-- Archer -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/archer/400/300" alt="射手职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">射手</h3>
+                    <div class="class-tags">
+                        <span class="tag role-dps">物理输出</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">爆发</span>
+                    </div>
+                    <p class="class-desc">射手擅长使用弓箭进行超远距离攻击，拥有极高的爆发伤害和风筝能力。在PVP中是令人生畏的远程杀手。</p>
+                    <ul class="class-features">
+                        <li>物理攻击距离最远</li>
+                        <li>控制技能（定身、眩晕）丰富</li>
+                        <li>适合喜欢拉扯战斗的玩家</li>
+                    </ul>
+                    <a href="#" class="btn">射手攻略</a>
+                </div>
+            </article>
+
+            <!-- Necromancer -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/necro/400/300" alt="异人职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">异人</h3>
+                    <div class="class-tags">
+                        <span class="tag role-dps">法术输出</span>
+                        <span class="tag">召唤</span>
+                        <span class="tag">控制</span>
+                    </div>
+                    <p class="class-desc">异人可以召唤僵尸作为自己的傀儡战斗。通过操控僵尸与敌人周旋，异人在PVP中拥有极高的生存能力。</p>
+                    <ul class="class-features">
+                        <li>召唤物分担伤害</li>
+                        <li>拥有高伤害的毒系技能</li>
+                        <li>远程消耗与阵地战专家</li>
+                    </ul>
+                    <a href="#" class="btn">异人攻略</a>
+                </div>
+            </article>
+
+            <!-- Wizard -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/wizard/400/300" alt="方士职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">方士</h3>
+                    <div class="class-tags">
+                        <span class="tag role-dps">法术输出</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">爆发</span>
+                    </div>
+                    <p class="class-desc">方士操控雷电与火焰，是游戏中的法术输出担当。拥有大范围的AOE伤害技能，清怪效率极高。</p>
+                    <ul class="class-features">
+                        <li>爆发伤害极高</li>
+                        <li>拥有多种元素控制技能</li>
+                        <li>群攻能力出色</li>
+                    </ul>
+                    <a href="#" class="btn">方士攻略</a>
+                </div>
+            </article>
+
+            <!-- Tank -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/tank/400/300" alt="甲士职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">甲士</h3>
+                    <div class="class-tags">
+                        <span class="tag role-tank">坦克</span>
+                        <span class="tag">近战</span>
+                        <span class="tag">防御</span>
+                    </div>
+                    <p class="class-desc">甲士手持重盾，是团队中最坚实的盾牌。近战物理输出，专注于防御和反击，是副本开怪的首选。</p>
+                    <ul class="class-features">
+                        <li>拥有最高的物理防御</li>
+                        <li>嘲讽技能吸引仇恨</li>
+                        <li>生存能力极强</li>
+                    </ul>
+                    <a href="#" class="btn">甲士攻略</a>
+                </div>
+            </article>
+
+            <!-- Crowd Control -->
+            <article class="class-card">
+                <div class="class-img-placeholder">
+                    <img src="https://picsum.photos/seed/charmer/400/300" alt="魅者职业">
+                </div>
+                <div class="class-info">
+                    <h3 class="class-name">魅者</h3>
+                    <div class="class-tags">
+                        <span class="tag role-crowd">控制</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">干扰</span>
+                    </div>
+                    <p class="class-desc">魅者擅长使用迷魂术干扰敌人，是PVP中的控制大师。通过沉默、混乱等技能，能瞬间改变战局。</p>
+                    <ul class="class-features">
+                        <li>拥有极强的控制链</li>
+                        <li>干扰敌方技能释放</li>
+                        <li>高爆发与高生存的平衡</li>
+                    </ul>
+                    <a href="#" class="btn">魅者攻略</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="comparison" class="comparison-section">
+        <h2>职业属性与定位对比</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>职业</th>
+                        <th>定位</th>
+                        <th>攻击方式</th>
+                        <th>特点</th>
+                        <th>适合人群</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>医师</strong></td>
+                        <td>治疗辅助</td>
+                        <td>远程/法术</td>
+                        <td>群体治疗、毒系控制</td>
+                        <td>细心、乐于助人的玩家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>射手</strong></td>
+                        <td>物理输出</td>
+                        <td>远程/物理</td>
+                        <td>高爆发、风筝流</td>
+                        <td>喜欢拉扯、操作细腻的玩家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>异人</strong></td>
+                        <td>法术输出</td>
+                        <td>远程/召唤</td>
+                        <td>召唤僵尸、阵地战</td>
+                        <td>喜欢策略布阵、不喜近身的玩家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>方士</strong></td>
+                        <td>法术输出</td>
+                        <td>远程/法术</td>
+                        <td>群攻、高爆发</td>
+                        <td>追求效率、喜欢AOE的玩家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>甲士</strong></td>
+                        <td>坦克</td>
+                        <td>近战/物理</td>
+                        <td>高防御、嘲讽</td>
+                        <td>性格稳重、喜欢冲锋的玩家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>魅者</strong></td>
+                        <td>控制</td>
+                        <td>远程/法术</td>
+                        <td>强控制、干扰</td>
+                        <td>喜欢PVP、操作灵活的玩家</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <h2>常见问题解答</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">新手应该选择哪个职业？</div>
+            <div class="faq-answer">
+                如果你喜欢团队协作，<strong>医师</strong>是新手最稳妥的选择，因为副本永远缺奶妈。如果你喜欢独自战斗或追求高伤害，<strong>射手</strong>或<strong>方士</strong>是不错的选择。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">甲士在PVP中表现如何？</div>
+            <div class="faq-answer">
+                甲士在PVP中通常担任先手开团的角色，利用高防御和嘲讽技能保护后排队友。虽然个人单挑能力较弱，但作为团队前排非常可靠。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">异人和方士哪个更赚钱？</div>
+            <div class="faq-answer">
+                从清怪效率来看，<strong>方士</strong>的群攻能力更强，练级和刷副本效率更高，因此往往更容易积累资源。但异人在特定的高端副本和PVP活动中也有其不可替代的价值。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">职业转职需要什么条件？</div>
+            <div class="faq-answer">
+                在游戏中，你可以通过完成特定的主线任务或使用转职道具在职业之间切换。但请注意，转职可能会影响你当前的装备和技能熟练度，建议在转职前做好规划。
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2023 倩女职业攻略网 - 专业游戏指南</p>
+        <p>本站内容仅供参考，游戏版权归网易所有。</p>
+    </div>
+</footer>
+
+</body>
+</html>
