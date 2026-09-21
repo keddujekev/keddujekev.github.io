@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="手机看片福利永久国产，提供安全、高清的国产视频资源在线观看平台。包含最新影视推荐、分类浏览及移动端优化体验。">
+    <meta name="keywords" content="手机看片福利永久国产,国产视频,在线看片,高清影视">
+    <title>手机看片福利永久国产-高清国产影视在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            outline: none;
+            width: 180px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
+        /* Mobile Nav Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: #2c0e0e;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4a1a1a;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-thumb {
+            width: 100%;
+            height: 280px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .rank-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8rem;
+        }
+
+        .rank-num.top-3 {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .rank-info {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #aaa;
+            padding: 40px 20px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+            <span>国产影视</span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="#">首页</a>
+            <a href="#">最新更新</a>
+            <a href="#">热门排行</a>
+            <a href="#">分类大全</a>
+            <a href="#">观看指南</a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="搜索片名...">
+            <button>搜索</button>
+        </div>
+        <div class="mobile-toggle" id="mobileToggle">☰</div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>手机看片福利永久国产</h1>
+    <p>专为移动端优化的国产高清视频平台，提供流畅、安全、无广告的在线观看体验。</p>
+    <a href="#" class="btn-primary">立即开始观看</a>
+</section>
+
+<main class="container">
+    <!-- Content Area -->
+    <section>
+        <div class="section-title">
+            <span>热门推荐</span>
+            <div class="filter-tags">
+                <span class="tag active">全部</span>
+                <span class="tag">高清</span>
+                <span class="tag">最新</span>
+                <span class="tag">经典</span>
+            </div>
+        </div>
+
+        <div class="video-grid">
+            <!-- Video Card 1 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video1/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">都市情感：都市夜未眠</h3>
+                    <div class="card-meta">
+                        <span>2023更新</span>
+                        <span>1280P</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 2 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video2/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">甜蜜时光：两个人的旅行</h3>
+                    <div class="card-meta">
+                        <span>高清</span>
+                        <span>1080P</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 3 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video3/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">职场风云：逆袭之路</h3>
+                    <div class="card-meta">
+                        <span>连载中</span>
+                        <span>720P</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 4 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video4/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">家庭伦理：爱的代价</h3>
+                    <div class="card-meta">
+                        <span>完结</span>
+                        <span>1080P</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 5 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video5/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">青春校园：那年夏天</h3>
+                    <div class="card-meta">
+                        <span>高清</span>
+                        <span>1280P</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 6 -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/video6/300/400" alt="国产电影封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">悬疑推理：迷雾重重</h3>
+                    <div class="card-meta">
+                        <span>热播</span>
+                        <span>1080P</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn-primary" style="background: white; color: var(--text-main); border: 1px solid #ddd;">加载更多</button>
+        </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-widget">
+            <h3 class="widget-title">本周排行</h3>
+            <ul class="rank-list">
+                <li>
+                    <span class="rank-num top-3">1</span>
+                    <span class="rank-info">都市情感：都市夜未眠</span>
+                </li>
+                <li>
+                    <span class="rank-num top-3">2</span>
+                    <span class="rank-info">甜蜜时光：两个人的旅行</span>
+                </li>
+                <li>
+                    <span class="rank-num top-3">3</span>
+                    <span class="rank-info">职场风云：逆袭之路</span>
+                </li>
+                <li>
+                    <span class="rank-num">4</span>
+                    <span class="rank-info">家庭伦理：爱的代价</span>
+                </li>
+                <li>
+                    <span class="rank-num">5</span>
+                    <span class="rank-info">悬疑推理：迷雾重重</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">观看指南</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                本站所有资源均来自互联网，仅供学习交流使用。
+            </p>
+            <ul style="font-size: 0.9rem; color: #666; line-height: 1.8;">
+                <li>如何选择清晰度？</li>
+                <li>手机端播放卡顿怎么办？</li>
+                <li>如何收藏喜欢的影片？</li>
+                <li>最新更新时间表</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">热门标签</h3>
+            <div class="filter-tags">
+                <span class="tag">国产</span>
+                <span class="tag">高清</span>
+                <span class="tag">无码</span>
+                <span class="tag">全集</span>
+                <span class="tag">福利</span>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+                致力于为用户提供便捷、高清的国产视频在线观看服务。我们坚持保护版权，拒绝非法内容。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">网站地图</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>版权声明</h4>
+            <ul>
+                <li>所有视频内容版权归原作者所有</li>
+                <li>本站仅提供信息存储空间服务</li>
+                <li>如侵犯您的权益，请联系删除</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 国产影视在线观看平台 版权所有</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Simple Tag Interaction
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            tags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+                                                        </html>
